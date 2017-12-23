@@ -1,6 +1,6 @@
 # Uncomment this if you ever need to debug a SystemStackError
-# require File.expand_path('../../lib/stack_overflow_backtrace', __FILE__)
-# StackOverflowBacktrace.install
+require File.expand_path('../../lib/stack_overflow_backtrace', __FILE__)
+StackOverflowBacktrace.install
 
 require File.expand_path('../boot', __FILE__)
 
