@@ -30,8 +30,8 @@ end
 
 module ORG
     NAME = "Zildith Network"
-    DOMAIN = "159.89.38.182"
-    EMAIL = "support@#{DOMAIN}"
+    DOMAIN = "zildith.net"
+    EMAIL = "zildithnetwork@gmail.com"
 end
 
 module PGM

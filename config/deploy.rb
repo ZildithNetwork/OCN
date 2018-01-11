@@ -16,8 +16,16 @@ set :repository, "git@github.com:ZildithNetwork/OCN.git"
 set :scm, :git
 set :deploy_to, "/home/rails/apps/ocn"
 set :user, 'rails'
+set :port, 3000
 set :git_enable_submodules, 1
 set :use_sudo, false
+
+server '159.89.38.182',
+    roles: [:web, :app, :db],
+    port: fetch(:port),
+    user: fetch(:user),
+    primary: true
+
 
 set :worker_user, 'minecraft'
 set :worker_log, "/minecraft/logs/worker/worker.log"
