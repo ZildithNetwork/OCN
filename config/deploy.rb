@@ -11,11 +11,12 @@ set :rvm_ruby_string, "ruby-2.1.5"
 set :rvm_type, :system
 
 set :application, "ocn"
-set :repository, "..."
+set :repository, "git@github.com:ZildithNetwork/OCN.git"
+server "159.89.38.182", :app, :web, :db, :primary => true
 
 set :scm, :git
-set :deploy_to, "/home/deploy/apps/ocn"
-set :user, 'deploy'
+set :deploy_to, "/home/rails/apps/ocn"
+set :user, 'rails'
 set :git_enable_submodules, 1
 set :use_sudo, false
 
