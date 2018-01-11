@@ -12,7 +12,6 @@ set :rvm_type, :system
 
 set :application, "ocn"
 set :repository, "git@github.com:ZildithNetwork/OCN.git"
-server "159.89.38.182", :app, :web, :db, :primary => true
 
 set :scm, :git
 set :deploy_to, "/home/rails/apps/ocn"
