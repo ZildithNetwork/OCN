@@ -64,7 +64,7 @@ gem 'ruby-string-match-scorer', :github => 'bjeanes/ruby-string-match-scorer'
 
 group :production, :staging do
     gem 'unicorn'                       # Web server
-    gem 'rvm-capistrano'                # RVM deploy integration
+    gem  'rvm-capistrano',  require: false     # RVM deploy integration
     gem 'capistrano-unicorn'            # Unicorn deploy integration
     gem 'sass-rails'                    # CSS and JS minification
     gem 'coffee-rails'                  # CSS and JS minification
