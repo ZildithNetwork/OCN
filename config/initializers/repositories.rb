@@ -1,8 +1,8 @@
 Repository.define do
-    repositories provider: :github, namespace: 'OvercastNetwork' do
+    repositories provider: :github, namespace: 'ZildithNetwork' do
         repository :data do
             klass           Repository::Data
-            repo            'Data'
+            repo            'OCN-Data'
             branch          'master'
             services        [:data]
         end
