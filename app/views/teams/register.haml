@@ -31,6 +31,7 @@
                                 %th KK ratio
                                 %th KD ratio
                                 %th Wools
+                                %th Flags
                                 %th Cores
                                 %th Monuments
                                 %th Member for
@@ -47,6 +48,7 @@
                                     %td= stat.stat(:kk)
                                     %td= stat.stat(:kd)
                                     %td= stat.stat(:wool_placed)
+                                    %td= stat.stat(:flags_captured)
                                     %td= stat.stat(:cores_leaked)
                                     %td= stat.stat(:destroyables_destroyed)
                                     %td{:rel => 'tooltip', :title => format_time(member.accepted_at), :data => {:placement => 'top', :container => 'body'}}

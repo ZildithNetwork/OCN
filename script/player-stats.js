@@ -193,11 +193,13 @@ stats_finalize = function(key, value) {
 		kills                      : {result: 0, type: "total"},
 		kills_team                 : {result: 0, type: "total"},
 		wool_placed                : {result: 0, type: "total"},
+		flags_captured             : {result: 0, type: "total"},
 		cores_leaked               : {result: 0, type: "total"},
 		destroyables_destroyed     : {result: 0, type: "total"},
 		last_death                 : {result: new Date(0), type: "recent"},
 		last_kill                  : {result: new Date(0), type: "recent"},
 		last_wool_placed           : {result: new Date(0), type: "recent"},
+		last_flag_captured         : {result: new Date(0), type: "recent"},
 		last_core_leaked           : {result: new Date(0), type: "recent"},
 		last_destroyable_destroyed : {result: new Date(0), type: "recent"},
 	};
@@ -357,6 +359,10 @@ objectives_map = function() {
 		emit["wool_placed"] = 1;
 		emit["last_wool_placed"] = this.date;
 		break;
+	case "flag_capture":
+		emit["flags_captured"] = 1;
+		emit["last_flag_captured"] = this.date;
+		break;
 	case "destroyable_destroy":
 		emit["destroyables_destroyed"] = 1;
 		emit["last_destroyable_destroyed"] = this.date;
@@ -374,11 +380,11 @@ objectives_map = function() {
 }
 
 objectives_reduce = function(key, result, obj) {
-	["wool_placed", "destroyables_destroyed", "cores_leaked"].forEach(function(field) {
+	["wool_placed", "flags_captured", "destroyables_destroyed", "cores_leaked"].forEach(function(field) {
 		_.sum(field, result, obj);
 	});
 
-	["last_wool_placed", "last_destroyable_destroyed", "last_core_leaked"].forEach(function(field) {
+	["last_wool_placed", "last_flag_captured", "last_destroyable_destroyed", "last_core_leaked"].forEach(function(field) {
 		_.greatest(field, new Date(0), result, obj);
 	});
 }

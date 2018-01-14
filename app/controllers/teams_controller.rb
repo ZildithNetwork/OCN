@@ -41,6 +41,7 @@ class TeamsController < ApplicationController
             @stats[:kills][:arr] << stat.pretty_stat(:kills)
             @stats[:deaths][:arr] << stat.pretty_stat(:deaths)
             @stats[:wools][:arr] << stat.pretty_stat(:wool_placed)
+            @stats[:flags][:arr] << stat.pretty_stat(:flags_captured)
             @stats[:cores][:arr] << stat.pretty_stat(:cores_leaked)
             @stats[:destroyables][:arr] << stat.pretty_stat(:destroyables_destroyed)
         end
