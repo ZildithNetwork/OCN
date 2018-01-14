@@ -12,13 +12,13 @@ preload_app true
 case role
     when 'octc'
         listen 3000
-        worker_processes 20
+        worker_processes 2
     when 'avatar'
         listen 3005
-        worker_processes 10
+        worker_processes 1
     when 'api'
         listen 3010
-        worker_processes 10
+        worker_processes 2
     else
         raise "Weird role: #{role}"
 end
