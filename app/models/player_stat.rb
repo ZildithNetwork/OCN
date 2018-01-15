@@ -32,6 +32,7 @@ module PlayerStat
         kills
         kills_team
         wool_placed
+        flag_captured
         cores_leaked
         destroyables_destroyed
     ]
@@ -46,6 +47,7 @@ module PlayerStat
         last_death
         last_kill
         last_wool_placed
+        last_flag_captured
         last_core_leaked
         last_destroyable_destroyed
     ]
@@ -54,6 +56,7 @@ module PlayerStat
 
     OBJECTIVES = %w[
         wool_placed
+        flags_captured
         cores_leaked
         destroyables_destroyed
     ]
