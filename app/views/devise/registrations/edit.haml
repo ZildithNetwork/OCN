@@ -24,7 +24,7 @@
             = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
                 .form-group
                     = f.label :gender, "Gender"
-                    = f.select :gender, [nil, "Male", "Female"], { :disabled => (@disabled.include? :gender) }, :class => 'form-control'
+                    = f.select :gender, [nil, "Male", "Female", "Other"], { :disabled => (@disabled.include? :gender) }, :class => 'form-control'
                 .form-group
                     = f.label :location, "Location"
                     = f.text_field :location, :disabled => (@disabled.include? :location), :class => 'form-control'
@@ -104,35 +104,38 @@
 
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
         .row
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :public_email, "Public Email"
                 = f.text_field :public_email, :disabled => (@disabled.include? :public_email), :class => 'form-control'
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :skype, "Skype"
                 = f.text_field :skype, :disabled => (@disabled.include? :skype), :class => 'form-control'
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :twitter, "Twitter"
                 = f.text_field :twitter, :disabled => (@disabled.include? :twitter), :class => 'form-control'
-        .row
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :facebook, "Facebook"
                 = f.text_field :facebook, :disabled => (@disabled.include? :facebook), :class => 'form-control'
-            .form-group.col-md-4
+        .row
+            .form-group.col-md-3
                 = f.label :steam, "Steam"
                 = f.text_field :steam, :disabled => (@disabled.include? :steam), :class => 'form-control'
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :twitch, "Twitch"
                 = f.text_field :twitch, :disabled => (@disabled.include? :twitch), :class => 'form-control'
-        .row
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :github, "GitHub"
                 = f.text_field :github, :disabled => (@disabled.include? :github), :class => 'form-control'
-            .form-group.col-md-4
+        .row
+            .form-group.col-md-3
                 = f.label :reddit, "Reddit"
                 = f.text_field :reddit, :disabled => (@disabled.include? :reddit), :class => 'form-control'
-            .form-group.col-md-4
+            .form-group.col-md-3
                 = f.label :discord, "Discord"
                 = f.text_field :discord, :disabled => (@disabled.include? :discord), :class => 'form-control'
+           .form-group.col-md-3
+                 = f.label :discord, "Instagram"
+                 = f.text_field :instagram, :disabled => (@disabled.include? :instagram), :class => 'form-control'
         .row
             .form-group.col-md-8
                 = f.submit "Update", :class => "btn btn-primary", :style => "margin-top: 28px;"
