@@ -19,7 +19,7 @@ set :user, 'rails'
 set :git_enable_submodules, 1
 set :use_sudo, false
 
-server '159.89.38.182', :web, :app, :db, :octc, :avatar, :api
+server '159.89.38.182', :web, :app, :db, :octc, :avatar, :api, :worker
 
 set :worker_user, 'minecraft'
 set :worker_log, "/minecraft/logs/worker/worker.log"
