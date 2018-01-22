@@ -110,7 +110,7 @@ namespace :worker do
         pid = fetch(:worker_pid)
         log = fetch(:worker_log)
 
-        cmd = %Q[cd #{latest_release} && rvmsudo -u #{user} bundle exec config/worker.rb #{action} --pid #{pid} --log #{log}]
+        cmd = %Q[cd #{latest_release} && bundle exec config/worker.rb #{action} --pid #{pid} --log #{log}]
         cmd << %Q[ || true] unless verify
         run cmd
     end
