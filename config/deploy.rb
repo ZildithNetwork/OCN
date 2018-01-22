@@ -14,8 +14,8 @@ set :application, "ocn"
 set :repository, "git@github.com:ZildithNetwork/OCN.git"
 
 set :scm, :git
-set :deploy_to, "/home/rails/apps/ocn"
-set :user, 'rails'
+set :deploy_to, "/home/deploy/apps/ocn"
+set :user, 'deploy'
 set :git_enable_submodules, 1
 set :use_sudo, false
 
