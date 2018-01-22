@@ -1708,7 +1708,7 @@
     commandProto.doTag = function (chunk, postProcessing) {
 
         var tagEnteredCallback = function (tag) {
-                chunk.startTag = "[user:";
+                chunk.startTag = "[user:" + tag;
                 chunk.endTag = "]";
 
                 postProcessing();
