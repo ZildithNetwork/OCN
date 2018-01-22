@@ -37,6 +37,7 @@ class User
     include Punishments
     include PvpEncounters
     include Raindrops
+    include Experience
     include Tickets
     include Servers
     include Sessions

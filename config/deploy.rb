@@ -25,7 +25,6 @@ set :worker_user, 'minecraft'
 set :worker_log, "/minecraft/logs/worker/worker.log"
 set :worker_pid, "/minecraft/tmp/pids/worker.pid"
 
-
 UNICORNS = %i[octc avatar api]
 
 default_environment['rvmsudo_secure_path'] = '0'
