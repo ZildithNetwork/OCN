@@ -1705,16 +1705,15 @@
         }
     };
 
-        commandProto.doTag = function (chunk, postProcessing) {
+    commandProto.doTag = function (chunk, postProcessing) {
 
-            chunk.startTag = "[user:";
-            chunk.endTag = "]";
-            chunk.selection = "";
+        chunk.startTag = "[user:";
+        chunk.endTag = "]";
+        chunk.selection = "";
 
-            ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback);
+        ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback);
 
-            return true;
-        }
+        return true;
     };
 
     // When making a list, hitting shift-enter will put your cursor on the next line
