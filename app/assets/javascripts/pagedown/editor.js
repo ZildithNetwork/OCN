@@ -1707,13 +1707,15 @@
 
     commandProto.doTag = function (chunk, postProcessing) {
 
-        chunk.startTag = "[user:";
-        chunk.endTag = "]";
-        chunk.selection = "";
+        var tagEnteredCallback = function (tag) {
+                chunk.startTag = "[user:";
+                chunk.endTag = "]";
+
+                postProcessing();
+            };
 
         ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback);
 
-        return true;
     };
 
     // When making a list, hitting shift-enter will put your cursor on the next line
