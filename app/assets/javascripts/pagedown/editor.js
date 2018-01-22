@@ -32,8 +32,8 @@
 
     // The default text that appears in the dialog input box when entering
     // links.
-    var imageDefaultText = "http://";
-    var linkDefaultText = "http://";
+    var imageDefaultText = "";
+    var linkDefaultText = "";
 
     var defaultHelpHoverTitle = "Markdown Editing Help";
 
@@ -1389,6 +1389,9 @@
             buttons.image = makeButton("wmd-image-button", "Image", "G", "fa fa-picture-o", bindCommand(function (chunk, postProcessing) {
                 return this.doLinkOrImage(chunk, postProcessing, true);
             }), group2);
+            buttons.tag = makeButton("wmd-tag-button", "Tag", "T", "fa fa-user", bindCommand(function (chunk, postProcessing) {
+                return this.doTag(chunk, postProcessing);
+            }), group2);
 
             group3 = makeGroup(3);
             buttons.olist = makeButton("wmd-olist-button", "Numbered List", "O", "fa fa-list-ol", bindCommand(function (chunk, postProcessing) {
@@ -1698,6 +1701,18 @@
             else {
                 ui.prompt('Insert Link', linkDialogText, linkDefaultText, linkEnteredCallback);
             }
+            return true;
+        }
+    };
+
+        commandProto.doTag = function (chunk, postProcessing) {
+
+            chunk.startTag = "[user:";
+            chunk.endTag = "]";
+            chunk.selection = "";
+
+            ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback);
+
             return true;
         }
     };
