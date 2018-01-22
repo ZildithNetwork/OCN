@@ -21,7 +21,7 @@ class Banner
         Server.bungees.online.each(&:api_sync!)
     end
 
-    TITLE = "§b§llife§c§lboat §f§lNetwork"
+    TITLE = "§5§lZildith §f§lNetwork"
     PIXELS = 263
 
     class << self
