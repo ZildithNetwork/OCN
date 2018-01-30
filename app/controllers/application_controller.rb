@@ -46,7 +46,7 @@ class ApplicationController < CommonController
 
     def index
         images = Array.new
-        (1..21).each{|i| images << "index/marketing/" + i.to_s + ".jpg"}
+        (1..3).each{|i| images << "index/marketing/" + i.to_s + ".jpg"}
         @image = images.sample
 
         @topics = Forem::Topic.announcements.limit(4)
