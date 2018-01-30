@@ -15,13 +15,6 @@ module PlayerStat
     FAMILIES = %w[
         global
         pgm-public
-        mini
-        blitz-public
-        gs-public
-        micro
-        arcade
-        skywars
-        survival
     ]
 
     TOTALS = %w[
@@ -69,12 +62,6 @@ module PlayerStat
     INDEXED_FAMILIES = %w[
         global
         pgm-public
-        mini
-        blitz-public
-        micro
-        arcade
-        skywars
-        survival
     ]
 
     INDEXED_STATS = %w[

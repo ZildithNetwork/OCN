@@ -46,21 +46,15 @@ PGM::Application.configure do
 
     config.gamemodes = {
         "Project Ares" => ["TDM", "CTW", "DTC", "DTM", "KOTH", "Mixed"],
-        "Blitz" => ["Classic", "Rage"],
-        "Ghost Squadron" => ["GS"],
     }
 
     config.gamemodes_short = {
         "pa" => "Project Ares",
-        "blitz" => "Blitz",
-        "gs" => "Ghost Squadron",
     }
     config.gamemodes_short_inv = config.gamemodes_short.invert
 
     config.gamemodes_folders = {
         "pa" => ["/TDM", "/CTW", "/DTC", "/DTM", "/KOTH", "/Mixed"],
-        "blitz" => ["Blitz/Classic", "Blitz/Rage"],
-        "gs" => ["Blitz/GS"],
     }
 
     config.after_initialize do
