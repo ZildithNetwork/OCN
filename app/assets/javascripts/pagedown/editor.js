@@ -1711,11 +1711,14 @@
     commandProto.doTag = function (chunk, postProcessing) {
 
         var tagEnteredCallback = function (tag) {
-                chunk.startTag = "[user:" + tag;
+            if(tag == "")
+            {
+                chunk.startTag = "[avatar-user:" + tag;
                 chunk.endTag = "]";
+            }
 
-                postProcessing();
-            };
+            postProcessing();
+        };
 
         ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback, false);
 
