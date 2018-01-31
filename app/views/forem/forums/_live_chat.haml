@@ -1,5 +1,12 @@
 %h4
     Discord
 .text-center
-    %a{:href => 'https://discord.gg/GEYfNM4'}
-        %img{:src => 'https://discordapp.com/api/guilds/393549574758727710/widget.png?style=shield'}
+    %script{:src => '//cdn.jsdelivr.net/discord-widget/1.0/discord-widget.min.js', :type => 'text/javascript'}
+    :javascript
+        discordWidget.init({
+            serverId: 'your-id',
+            hideChannels: [''],
+            showAllUsers: true,
+            allUsersDefaultState: false,
+        });
+        discordWidget.render();
