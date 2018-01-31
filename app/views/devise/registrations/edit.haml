@@ -133,9 +133,9 @@
             .form-group.col-md-3
                 = f.label :discord, "Discord"
                 = f.text_field :discord, :disabled => (@disabled.include? :discord), :class => 'form-control'
-           .form-group.col-md-3
-                 = f.label :discord, "Instagram"
-                 = f.text_field :instagram, :disabled => (@disabled.include? :instagram), :class => 'form-control'
+            .form-group.col-md-3
+                = f.label :discord, "Instagram"
+                = f.text_field :instagram, :disabled => (@disabled.include? :instagram), :class => 'form-control'
         .row
             .form-group.col-md-8
                 = f.submit "Update", :class => "btn btn-primary", :style => "margin-top: 28px;"
