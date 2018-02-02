@@ -66,6 +66,7 @@ hr {
     .navbar-nav>li>a {
         padding-top: 10px;
         padding-bottom: 10px;
+        color: #ECECEC
     }
     .collapse.in{
   		display:block !important;
@@ -125,6 +126,8 @@ hr {
 
 .navbar-default {
     margin-bottom: 0;
+    background-color: #503288;
+    border-color: #382065;
 }
 
 .navbar-brand {
