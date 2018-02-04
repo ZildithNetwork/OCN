@@ -137,6 +137,7 @@ hr {
 .navbar-default .navbar-nav > li > a:focus {
     color: #eeeeee !important;
     background-color: #503288 !important;
+}
 
 .navbar-brand {
     font-weight: 300;
