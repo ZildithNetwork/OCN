@@ -6,7 +6,6 @@ class Punishment
     include PunishmentHelper
     include ApiModel
     include ApiAnnounceable
-    include ApiSyncable
     include ApiSearchable
     store_in :database => 'oc_punishments'
 
@@ -91,7 +90,7 @@ class Punishment
 
     # Callbacks
 
-    before_create do
+    before_validation do
         playing_time_ms ||= punished.stats.playing_time_ms
 
         unless type
