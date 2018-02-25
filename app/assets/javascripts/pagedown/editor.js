@@ -32,8 +32,8 @@
 
     // The default text that appears in the dialog input box when entering
     // links.
-    var imageDefaultText = "http://";
-    var linkDefaultText = "http://";
+    var imageDefaultText = "";
+    var linkDefaultText = "";
 
     var defaultHelpHoverTitle = "Markdown Editing Help";
 
@@ -977,7 +977,7 @@
     // callback: The function which is executed when the prompt is dismissed, either via OK or Cancel.
     //      It receives a single argument; either the entered text (if OK was chosen) or null (if Cancel
     //      was chosen).
-    ui.prompt = function (title, text, defaultInputText, callback) {
+    ui.prompt = function (title, text, defaultInputText, callback, addHttp) {
 
         // These variables need to be declared at this level since they are used
         // in multiple functions.
@@ -1005,15 +1005,18 @@
             util.removeEvent(doc.body, "keydown", checkEscape);
             var text = input.value;
 
-            if (isCancel) {
-                text = null;
-            }
-            else {
-                // Fixes common pasting errors.
-                text = text.replace(/^http:\/\/(https?|ftp):\/\//, '$1://');
-                if (!/^(?:https?|ftp):\/\//.test(text))
-                    text = 'http://' + text;
-            }
+            if(addHttp)
+            {
+                if (isCancel) {
+                    text = null;
+                }
+                else {
+                    // Fixes common pasting errors.
+                    text = text.replace(/^http:\/\/(https?|ftp):\/\//, '$1://');
+                    if (!/^(?:https?|ftp):\/\//.test(text))
+                        text = 'http://' + text;
+                }
+            } 
 
             $(dialog).modal('hide');
 
@@ -1389,6 +1392,9 @@
             buttons.image = makeButton("wmd-image-button", "Image", "G", "fa fa-picture-o", bindCommand(function (chunk, postProcessing) {
                 return this.doLinkOrImage(chunk, postProcessing, true);
             }), group2);
+            buttons.tag = makeButton("wmd-tag-button", "Tag", "T", "fa fa-user", bindCommand(function (chunk, postProcessing) {
+                return this.doTag(chunk, postProcessing);
+            }), group2);
 
             group3 = makeGroup(3);
             buttons.olist = makeButton("wmd-olist-button", "Numbered List", "O", "fa fa-list-ol", bindCommand(function (chunk, postProcessing) {
@@ -1693,13 +1699,26 @@
 
             if (isImage) {
                 if (!this.hooks.insertImageDialog(linkEnteredCallback))
-                    ui.prompt('Insert Image', imageDialogText, imageDefaultText, linkEnteredCallback);
+                    ui.prompt('Insert Image', imageDialogText, imageDefaultText, linkEnteredCallback, true);
             }
             else {
-                ui.prompt('Insert Link', linkDialogText, linkDefaultText, linkEnteredCallback);
+                ui.prompt('Insert Link', linkDialogText, linkDefaultText, linkEnteredCallback, true);
             }
             return true;
         }
+    };
+
+    commandProto.doTag = function (chunk, postProcessing) {
+
+        var tagEnteredCallback = function (tag) {
+                chunk.startTag = "[user:" + tag;
+                chunk.endTag = "]";
+
+                postProcessing();
+            };
+
+        ui.prompt('Insert User Tag', 'Insert username of the user you wish to tag', '', tagEnteredCallback, false);
+
     };
 
     // When making a list, hitting shift-enter will put your cursor on the next line

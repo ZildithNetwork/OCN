@@ -24,7 +24,7 @@ class Portal
     define do
         portal 'DC' do
             long_name "Global"
-            hostname "dc.#{ORG::DOMAIN}"
+            hostname "play.#{ORG::DOMAIN}"
             listed? true
         end
 

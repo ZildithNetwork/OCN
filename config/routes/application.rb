@@ -3,7 +3,7 @@ PGM::Application.routes.draw do
         get "/#{status}", to: 'errors#show', status: status
     end
 
-    default_url_options :host => "localhost"
+    default_url_options :host => "zildith.net"
     mount Peek::Railtie => "/peek"
     mount Forem::Engine, :at => "/forums"
 
