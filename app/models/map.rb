@@ -18,7 +18,7 @@ class Map
 
     class Genre < Enum
         create :OBJECTIVES, :DEATHMATCH, :OTHER
-        # dtm? dtc? ctw?
+        # blitz? rage? survival?
     end
 
     field :genre, type: Genre, default: Genre::OTHER
@@ -49,9 +49,15 @@ class Map
         dtm:        {name: "Destroy the Monument"},
         ad:         {name: "Attack/Defend"},
         koth:       {name: "King of the Hill"},
+        blitz:      {name: "Blitz"},
+        rage:       {name: "Rage"},
+        scorebox:   {name: "Scorebox"},
         arcade:     {name: "Arcade"},
+        gs:         {name: "Ghost Squadron"},
         ffa:        {name: "Free-for-all"},
         mixed:      {name: "Mixed"},
+        skywars:    {name: "Skywars"},
+        survival:   {name: "Survival Games"},
     }
 
     field :_id,             type: String, overwrite: true # Derived from other fields, see #normalize

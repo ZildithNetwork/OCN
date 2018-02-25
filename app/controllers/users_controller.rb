@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         latest_visible = @player.last_seen_by
 
         @stats = @player.stats
-        @families = {"Project Ares" => "pgm-public"}
+        @families = {"Project Ares" => "pgm-public", "Mini" => "mini", "Blitz" => "blitz-public", "Ghost Squadron" => "gs-public"}
 
         @initial_join = @player.initial_join.nil? ? current_time : @player.initial_join
         @days_here = ((Time.now - @initial_join) / 60 / 60 / 24).round
@@ -249,6 +249,9 @@ class UsersController < ApplicationController
         }
         @families = {
             "pgm-public" => "Objectives/Deathmatch",
+            "mini" => "Mini",
+            "blitz-public" => "Blitz",
+            "micro" => "Micro",
             "global" => "all games (time only)"
         }
         @sorts = {
