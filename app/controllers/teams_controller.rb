@@ -29,6 +29,7 @@ class TeamsController < ApplicationController
             :kills => {:arr => [], :averageable => false},
             :deaths => {:arr => [], :averageable => false},
             :wools => {:arr => [], :averageable => false},
+            :flags => {:arr => [], :averageable => false},
             :cores => {:arr => [], :averageable => false},
             :destroyables => {:arr => [], :averageable => false}
         }
