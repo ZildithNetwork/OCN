@@ -678,6 +678,7 @@ blockquote {
 
 pre.about-me, .about-me pre {
     white-space: pre-wrap !important;
+    font-family: sans-serif;
 }
 
 .about-me .btn {
