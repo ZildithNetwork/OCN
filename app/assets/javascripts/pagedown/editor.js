@@ -1711,11 +1711,8 @@
     commandProto.doTag = function (chunk, postProcessing) {
 
         var tagEnteredCallback = function (tag) {
-            if(tag == "")
-            {
-                chunk.startTag = "[avatar-user:" + tag;
-                chunk.endTag = "]";
-            }
+            chunk.startTag = "[avatar-user:" + tag;
+            chunk.endTag = "]";
 
             postProcessing();
         };
