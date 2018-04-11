@@ -5,34 +5,30 @@
                 %li.heading
                     Policies
                 %li
-                    %a Player Rules
+                    %a{href: "/rules"} Player Rules
                 %li
-                    %a Terms of Service
+                    %a{href: "/terms"} Terms of Service
                 %li
-                    %a Privacy Policy
+                    %a{href: "/terms"} Privacy Policy
                 %li
-                    %a Refund Policy
+                    %a{href: "/terms"} Refund Policy
         .col-md-2.col-sm-4.col-xs-6
             %ul.nav.nav-pills.nav-stacked
                 %li.heading
                     Moderation
                 %li
                     %a{:href => main_app.start_report_path} Report a Player
-                %li
-                    %a{:href => main_app.start_appeal_path} Appeal a Punishment
-                %li
-                    %a{:href => main_app.punishments_path} Recent Punishments
         .clearfix.visible-xs-block{style: "padding-bottom: 20px;"}
         .col-md-2.col-sm-4.col-xs-6
             %ul.nav.nav-pills.nav-stacked
                 %li.heading
                     Organization
                 %li
-                    %a{:href => main_app.staff_index_path} Staff Listing
+                    %a{:href => main_app.staff_index_path} Staff
                 %li
                     %a{href: main_app.revisions_path} Development Logs
                 %li
-                    %a{href: "https://github.com/OvercastNetwork/Issues"} Report a Bug
+                    %a{href: "https://gitlab.com/ZildithNetwork/Issues"} Report a Bug
         .clearfix.visible-sm-block{style: "padding-bottom: 20px;"}
         .col-md-2.col-sm-4.col-xs-6
             %ul.nav.nav-pills.nav-stacked
@@ -42,8 +38,6 @@
                     %a.inquiry{href: "#contact", data: {toggle: "modal"}} General Inquiries
                 %li
                     %a.inquiry{href: "#contact", data: {toggle: "modal"}} Shop Purchases
-                %li
-                    %a{:href => main_app.start_appeal_path} Ban Appeals
         .clearfix.visible-xs-block{style: "padding-bottom: 20px;"}
         .col-md-2.col-sm-4
             %ul.nav.nav-pills.nav-stacked.follow-us
@@ -56,7 +50,7 @@
                     %a{href: "http://www.twitch.tv/Zildith"}
                         %i.fa.fa-twitch
                         Twitch
-                    %a{href: "http://zildith.net/discord"}
+                    %a{href: "https://discordapp.com/invite/GEYfNM4"}
                         %i.fa.fa-microphone
                         Discord
         .clearfix.visible-xs-block{style: "padding-bottom: 20px;"}

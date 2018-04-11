@@ -121,12 +121,100 @@ class UsersController < ApplicationController
             [heading, criteria.limit(10).prefetch(:reporter, :reported, 'last_action.user').to_a]
         }
 
+        if @stats.stat(:kills) >= 1000
+            Trophy['1k-kills'].give_to(@player)
+        end
+
         if @stats.stat(:kills) >= 10000
             Trophy['10k-kills'].give_to(@player)
         end
 
+        if @stats.stat(:kills) >= 50000
+            Trophy['50k-kills'].give_to(@player)
+        end
+
         if @stats.stat(:kills) >= 100000
             Trophy['100k-kills'].give_to(@player)
+        end
+
+        if @stats.stat(:flags) >= 50
+            Trophy['50-flags'].give_to(@player)
+        end
+
+        if @stats.stat(:flags) >= 100
+            Trophy['100-flags'].give_to(@player)
+        end
+
+        if @stats.stat(:flags) >= 250
+            Trophy['250-flags'].give_to(@player)
+        end
+
+        if @stats.stat(:flags) >= 500
+            Trophy['500-flags'].give_to(@player)
+        end
+
+        if @stats.stat(:flags) >= 1000
+            Trophy['1k-flags'].give_to(@player)
+        end
+
+        if @stats.stat(:wools) >= 50
+            Trophy['50-wools'].give_to(@player)
+        end
+
+        if @stats.stat(:wools) >= 100
+            Trophy['100-wools'].give_to(@player)
+        end
+
+        if @stats.stat(:wools) >= 250
+            Trophy['250-wools'].give_to(@player)
+        end
+
+        if @stats.stat(:wools) >= 500
+            Trophy['500-wools'].give_to(@player)
+        end
+
+        if @stats.stat(:wools) >= 1000
+            Trophy['1k-wools'].give_to(@player)
+        end
+
+        if @stats.stat(:cores) >= 50
+            Trophy['50-cores'].give_to(@player)
+        end
+
+        if @stats.stat(:cores) >= 100
+            Trophy['100-cores'].give_to(@player)
+        end
+
+        if @stats.stat(:cores) >= 250
+            Trophy['250-cores'].give_to(@player)
+        end
+
+        if @stats.stat(:cores) >= 500
+            Trophy['500-cores'].give_to(@player)
+        end
+
+        if @stats.stat(:cores) >= 1000
+            Trophy['1k-cores'].give_to(@player)
+        end
+
+        if @stats.stat(:destroyables) >= 50
+            Trophy['50-destroyables'].give_to(@player)
+        end
+
+        if @stats.stat(:destroyables) >= 100
+            Trophy['100-destroyables'].give_to(@player)
+        end
+
+        if @stats.stat(:destroyables) >= 250
+            Trophy['250-destroyables'].give_to(@player)
+        end
+
+        if @stats.stat(:destroyables) >= 500
+            Trophy['500-destroyables'].give_to(@player)
+        end
+
+        if @stats.stat(:destroyables) >= 1000
+            Trophy['1k-destroyables'].give_to(@player)
         end
 
         @trophy_count = @player.trophies.count
