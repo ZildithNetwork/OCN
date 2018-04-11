@@ -4,7 +4,9 @@ class Server
         include RequestCacheable
 
         included do
-            field :rotations, type: Hash
+            field :rotations, type: Array, default: [].freeze
+            attr_accessible :rotations
+            api_property :rotations
 
             field :rotation_file, type: String # relative to rotations repo root
 
